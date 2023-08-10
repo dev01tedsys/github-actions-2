@@ -1,0 +1,19 @@
+name: Deployment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output folder
+        run: pwd
+      - name: Output contents
+        run: ls
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Output folder
+        run: pwd
+      - name: Output contents
+        run: ls
