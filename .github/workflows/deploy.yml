@@ -16,4 +16,4 @@ jobs:
       - name: Output folder
         run: pwd
       - name: Output contents
-        run: ls
+        run: ls ./
