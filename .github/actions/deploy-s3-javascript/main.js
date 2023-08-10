@@ -7,9 +7,12 @@ function run() {
   const bucketRegion = core.getInput('bucket-region', { required: true });
   const distFolder = core.getInput('dist-folder', { required: true });
 
+  exec.exec(`rm -rf ${distFolder}/.git`);
+  exec.exec(`rm -rf ${distFolder}/.github`);
+
   // 2) Upload files
-  const s3Uri = `s3://${bucket}`;
-  exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
+  //const s3Uri = `s3://${bucket}`;
+  //exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
 }
 
 run();
